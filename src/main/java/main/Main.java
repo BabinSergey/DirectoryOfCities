@@ -6,6 +6,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
+import static service.SortingCities.typeCity;
+import static service.SortingCities.typeDistrict;
+
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -29,7 +32,7 @@ public class Main {
 
             city.add(ct);
 
-        // Выводим в консоль наши объеты
+        // Выводим в консоль объеты
             System.out.println(ct);
         }
         sc.close();
@@ -38,19 +41,15 @@ public class Main {
         System.out.println("-------------------------------");
         System.out.println();
 
-        // Сортируем по имени города
+        // Выводим в консоль отсортированные по городам
+        typeCity(city);
 
-        Collections.sort(city, new Comparator<City>() {
-            @Override
-            public int compare(City o1, City o2) {
-                int result = o1.getName().compareTo(o2.getName());
-                return result;
-            }
-        });
+        // Визуально разграничиваем от следующего блока
+        System.out.println("-------------------------------");
+        System.out.println();
 
-        // Выводим в консоль объекты отсортированные по алфовиту
-        for (City ct : city) {
-            System.out.println(ct);
-        }
+        // Выводим в консоль отсортированные по округам и городам
+        typeDistrict(city);
+
     }
 }
