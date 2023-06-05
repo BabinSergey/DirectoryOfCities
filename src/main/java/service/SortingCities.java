@@ -52,16 +52,4 @@ public class SortingCities {
             System.out.println(ct);
         }
     }
-
-
-
-
-
-
-
-
-
-//        for (City ct : city) {
-//            System.out.println(ct);
-//        }
 }
