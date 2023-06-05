@@ -4,9 +4,8 @@ import model.City;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
+
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -29,9 +28,29 @@ public class Main {
             ct.setFoundation(value[5]);
 
             city.add(ct);
-            System.out.println(ct);
 
+        // Выводим в консоль наши объеты
+            System.out.println(ct);
         }
         sc.close();
+
+        // Визуально разграничиваем от следующего блока
+        System.out.println("-------------------------------");
+        System.out.println();
+
+        // Сортируем по имени города
+
+        Collections.sort(city, new Comparator<City>() {
+            @Override
+            public int compare(City o1, City o2) {
+                int result = o1.getName().compareTo(o2.getName());
+                return result;
+            }
+        });
+
+        // Выводим в консоль объекты отсортированные по алфовиту
+        for (City ct : city) {
+            System.out.println(ct);
+        }
     }
 }
