@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.*;
 
 import static service.SearchByCity.moreResidents;
+import static service.SearchCityByRegion.citiesRegion;
 import static service.SortingCities.typeCity;
 import static service.SortingCities.typeDistrict;
 
@@ -47,7 +48,10 @@ public class Main {
 //        typeDistrict(city);
 
         // Выводим в консоль город с наибольшим количеством жителей
-        moreResidents(city);
+//        moreResidents(city);
+
+        // Выводим в консоль количество городов в регионе
+        citiesRegion(city);
 
     }
 }
