@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
+import static service.SearchByCity.moreResidents;
 import static service.SortingCities.typeCity;
 import static service.SortingCities.typeDistrict;
 
@@ -33,23 +34,20 @@ public class Main {
             city.add(ct);
 
         // Выводим в консоль объеты
-            System.out.println(ct);
+//            System.out.println(ct);
         }
         sc.close();
 
-        // Визуально разграничиваем от следующего блока
-        System.out.println("-------------------------------");
-        System.out.println();
 
         // Выводим в консоль отсортированные по городам
-        typeCity(city);
+//        typeCity(city);
 
-        // Визуально разграничиваем от следующего блока
-        System.out.println("-------------------------------");
-        System.out.println();
 
         // Выводим в консоль отсортированные по округам и городам
-        typeDistrict(city);
+//        typeDistrict(city);
+
+        // Выводим в консоль город с наибольшим количеством жителей
+        moreResidents(city);
 
     }
 }
